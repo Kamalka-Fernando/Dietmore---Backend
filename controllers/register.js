@@ -16,4 +16,13 @@ const registerUser = async(req, res) => {
       }
 }
 
-module.exports = { registerUser }
+const getUser = async(req,res) => {
+      try{
+            const registerDetails = await registerDbSchema.find()
+            res.json(registerDetails)
+      }
+      catch(err){
+            res.send('Error' + err)
+      }
+};
+module.exports = { registerUser, getUser }

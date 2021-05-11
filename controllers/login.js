@@ -1,5 +1,6 @@
 const LoginDbSchema = require('../models/login')
 
+
 const getUser = async(req,res) => {
       try{
             const loginDetails = await LoginDbSchema.find()
@@ -22,7 +23,7 @@ const getUserById = async(req, res) => {
 
 const postUser = async(req, res) =>{
       const loginData = new LoginDbSchema({
-            username: req.body.username,
+            email: req.body.email,
             password: req.body.password
       });
       try{
